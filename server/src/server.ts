@@ -14,6 +14,7 @@ new ServerSocket(httpServer)
 // Log the request
 application.use((request, response, next) => {
   console.info(`Method :[${request.method}] - URL: [${request.url}] - IP: [${request.socket.remoteAddress}]`);
+  
   response.on('finish', () => {
     console.info(`Method :[${request.method}] - URL: [${request.url}] - IP: [${request.socket.remoteAddress}]`);
   });
